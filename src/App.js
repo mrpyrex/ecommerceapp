@@ -8,8 +8,10 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
+import Shop from "./components/Shop";
 
 import { setCurrentUser } from "./redux/actions/user.action";
+import Category from "./components/Category";
 
 export class App extends Component {
   unsubscribeFromAuth = null;
@@ -43,6 +45,8 @@ export class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/category/:id" component={Category} />
+          <Route path="/shop" component={Shop} />
           <Route
             exact
             path="/login"

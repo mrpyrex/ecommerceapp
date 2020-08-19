@@ -1,19 +1,10 @@
 import React from "react";
-
-import { GET_CATEGORIES_QUERY } from "../queries";
-import { Query } from "react-apollo";
+import CategoryMenu from "./CategoryMenu";
 
 const Home = () => {
   return (
     <div>
-      <Query query={GET_CATEGORIES_QUERY}>
-        {({ data, loading, error }) => {
-          if (loading) return <div>loading...</div>;
-          if (error) return console.log(error);
-
-          return <div>{JSON.stringify(data)}</div>;
-        }}
-      </Query>
+      <CategoryMenu />
     </div>
   );
 };
